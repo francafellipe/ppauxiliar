@@ -19,10 +19,12 @@
     .content {
       padding: 1rem;
       margin-top: 60px;
+      padding-top: 20px;
     }
 
     .content-container {
       display: none;
+      overflow-y: auto;
     }
 
     .header {
@@ -47,6 +49,42 @@
     .planilha-table td {
       padding: 0.5rem;
       text-align: center;
+    }
+
+    .list-group-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .list-group-item img {
+      max-width: 95%;
+      height: auto; 
+    }
+
+    .list-group-item p {
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .list-group-item {
+        margin-bottom: 10px;
+      }
+      .content-container {
+        max-height: 90vh;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .list-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .content-container {
+        max-height: 85vh;
+      }
     }
   </style>
 </head>
@@ -78,7 +116,7 @@
               <button class="btn btn-primary nav-link" onclick="mostrarConteudo('estoque-par')">Estoque P.A.R</button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary nav-link" onclick="mostrarConteudo('planilha')">Exibir Planilha
+              <button class="btn btn-primary nav-link disabled" onclick="mostrarConteudo('planilha')">Exibir Planilha
                 Atualizada</button>
             </li>
             <li class="nav-item">
@@ -93,19 +131,65 @@
   <div class="content">
     <div class="content-container" id="conferencia-quebra">
       <h2>Conferência de Quebra</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur nemo eligendi nobis in soluta cupiditate, harum tempora debitis! Ratione, nesciunt. At rerum assumenda corporis dolores officia saepe natus, nostrum provident.</p>
+      <p>Passo a passo para Conferir os Itens Lançados nas CGO's de Quebra</p>
+      <ol class="list-group">
+        <li class="list-group-item">1 Acesso ao Sistema: Faça login no sistema utilizando suas credenciais de usuário.</li>
+        <li class="list-group-item">
+          <img src="./imagens/1perdas.jpeg" alt="Imagem 1">
+          <p>2 ACESSE COMERCIAL - GERENCIAL</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/2perdas.jpeg" alt="Imagem 2">
+          <p>3 - CLIQUE EM ANÁLISE ABC DE PERDAS</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/1.5perdas.jpeg" alt="Imagem 1.5">
+          <p>4 - Na tela inicial da Análise ABC de perdas selecine filtro </p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/3perdas.jpeg" alt="Imagem 3">
+          <p>5 - Seleção da Opção de CGO: selecione a opção ou menu específico para CGO's de quebra.</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/4perdas.jpeg" alt="Imagem 4">
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/5perdas.jpeg" alt="Imagem 5">
+          <p>7 - Marque somente os CGO`s escolhidos  uma vez aplicado a seleção, selecione escolher CGOS e você verá uma lista de todas as CGO's.</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/6perdas.jpeg" alt="Imagem 6">
+          <p>8 - Detalhes dos CGO`S: Clique em cada CGO de quebra para visualizar os itens lançados. Selecione somente as CGO`S 549, 567 E 555</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/7perdas.jpeg" alt="Imagem 7">
+          <p>9 - Filtragem por Data: Utilize os filtros disponíveis para selecionar o período de datas que deseja conferir. Isso pode incluir a data de início e fim do período de lançamento dos produtos, filtro por sessão , categoria etc..</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/8perdas.jpeg" alt="Imagem 8">
+          <p>10 - Selecione os detalhes que serão exibidos na planilha</p>
+        </li>
+        <li class="list-group-item">
+          <img src="./imagens/10perdas.jpeg" alt="Imagem 10">
+          <p>11 - Ao apertar F8 ou clicar para buscar , sua tela ficara parecido com está, o valor do seu quebra de cada produto está na coluna - Tot Perda Bruto - o valor total da somatoria aparece abaixo </p>
+        </li>
+      </ol>
     </div>
     <div class="content-container" id="relatorio-quebra">
       <h2>Relatório de Quebra</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam qui nulla eveniet fuga consequatur beatae sequi commodi quidem cupiditate aspernatur facilis corporis excepturi, nam provident quisquam reiciendis. Consectetur, a id.</p>
+      <p>Imprimir relátorio de Avarias </p>
     </div>
     <div class="content-container" id="estoque-cigarros">
       <h2>Estoque Cigarros</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum unde nostrum error cum doloremque quam accusantium vitae at, soluta laborum maxime consequatur, cumque voluptatibus repellendus, debitis dolorum illum omnis neque?</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum unde nostrum error cum doloremque quam
+        accusantium vitae at, soluta laborum maxime consequatur, cumque voluptatibus repellendus, debitis dolorum illum
+        omnis neque?</p>
     </div>
     <div class="content-container" id="estoque-par">
       <h2>Estoque P.A.R</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque nostrum expedita, repellat amet nisi nobis sapiente natus ipsum, soluta numquam, molestias vero. Illum expedita explicabo, nisi optio iure natus tempore!</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque nostrum expedita, repellat amet nisi nobis
+        sapiente natus ipsum, soluta numquam, molestias vero. Illum expedita explicabo, nisi optio iure natus tempore!
+      </p>
     </div>
     <div class="content-container" id="planilha">
       <h2>Atualizar Planilha</h2>
@@ -273,8 +357,9 @@
     });
 
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
